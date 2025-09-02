@@ -1,7 +1,7 @@
 {
-  "name": "fhir-render",
+  "name": "fhir-lens",
   "version": "1.0.0",
-  "description": "React component for rendering FHIR data",
+  "description": "A comprehensive FHIR data viewer that brings healthcare information into sharp focus",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
