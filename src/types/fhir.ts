@@ -195,6 +195,36 @@ export interface Claim {
   total?: Money;
 }
 
+export interface ClaimResponse {
+  resourceType: "ClaimResponse";
+  id?: string;
+  meta?: Meta;
+  identifier?: Identifier[];
+  status?: string;
+  type?: CodeableConcept;
+  use?: string;
+  patient?: Reference;
+  created?: string;
+  insurer?: Reference;
+  requestor?: Reference;
+  request?: Reference;
+  outcome?: string;
+  disposition?: string;
+  preAuthRef?: string;
+  preAuthPeriod?: Period;
+  payeeType?: CodeableConcept;
+  item?: any[];
+  total?: Money[];
+  payment?: any;
+  fundsReserve?: CodeableConcept;
+  formCode?: CodeableConcept;
+  form?: any;
+  processNote?: any[];
+  communicationRequest?: Reference[];
+  insurance?: any[];
+  error?: any[];
+}
+
 // Coverage Eligibility Resources
 export interface CoverageEligibilityRequestItem {
   category?: CodeableConcept;
@@ -295,13 +325,13 @@ export interface InsurancePlan {
 }
 
 // Union type for all possible resources
-export type FHIRResource = 
-  | Patient 
+export type FHIRResource = Patient 
   | Practitioner 
   | Organization 
   | Location 
   | Coverage 
   | Claim 
+  | ClaimResponse
   | CoverageEligibilityRequest 
   | CoverageEligibilityResponse 
   | InsurancePlan;
