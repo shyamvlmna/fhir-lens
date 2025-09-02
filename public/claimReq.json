@@ -1,0 +1,881 @@
+{
+  "resourceType": "Bundle",
+  "id": "d24ce69b-db61-43a2-9c0d-a74adf66eaed",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2024-12-25T13:07:58.971Z",
+    "profile": [
+      "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ClaimBundle"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+        "code": "V",
+        "display": "very restricted"
+      }
+    ]
+  },
+  "type": "collection",
+  "timestamp": "2024-12-25T13:07:58.971Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:432e8e96-9ff5-408d-98f9-c8a3fa86dc84",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "432e8e96-9ff5-408d-98f9-c8a3fa86dc84",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Claim"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://irdai.gov.in",
+            "value": "432e8e96-9ff5-408d-98f9-c8a3fa86dc84"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "737481003",
+              "display": "Inpatient care management (procedure)"
+            }
+          ]
+        },
+        "use": "preauthorization",
+        "patient": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3"
+        },
+        "billablePeriod": {
+          "start": "2022-12-02",
+          "end": "2022-12-02"
+        },
+        "created": "2024-12-25T13:07:58.971Z",
+        "insurer": {
+          "reference": "urn:uuid:8f3d08a4-ac1f-4626-80f4-a787b15f841c"
+        },
+        "provider": {
+          "reference": "urn:uuid:b767edc9-c11c-4ece-824f-3dbdda1f05a4"
+        },
+        "priority": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+              "code": "normal"
+            }
+          ]
+        },
+        "prescription": {
+          "reference": "urn:uuid:afeee36e-fea2-4275-9750-9dfbbeb23292"
+        },
+        "careTeam": [
+          {
+            "sequence": 1,
+            "provider": {
+              "reference": "urn:uuid:7b4e4b74-6934-4006-b1f2-08e71588d9c4"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "223366009",
+                  "display": "Healthcare professional (occupation)"
+                }
+              ],
+              "text": "Healthcare professional (occupation)"
+            },
+            "qualification": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "394658006",
+                  "display": "Clinical specialty (qualifier value)"
+                }
+              ],
+              "text": "Clinical specialty (qualifier value)"
+            }
+          }
+        ],
+        "supportingInfo": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-supportinginfo-category",
+                  "code": "POI",
+                  "display": "Proof of identity"
+                }
+              ]
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-supportinginfo-code",
+                  "code": "AT",
+                  "display": "Attachment"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "urn:uuid:3d29e7c8-e30a-4da7-b449-3e72fe22786b",
+              "display": "DocumentReference"
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-diagnostic-type",
+                  "code": "50911000",
+                  "display": "Ectopic testis"
+                }
+              ],
+              "text": "Ectopic testis"
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "148006",
+                    "display": "Preliminary diagnosis"
+                  }
+                ],
+                "text": "Preliminary diagnosis"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "sequence": 1,
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "126900000",
+                  "display": "Tumor of testis"
+                }
+              ],
+              "text": "Tumor of testis"
+            }
+          },
+          {
+            "sequence": 2,
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "50911000",
+                  "display": "Ectopic testis"
+                }
+              ],
+              "text": "Ectopic testis"
+            }
+          }
+        ],
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "urn:uuid:4f363e3f-7a83-45b2-94a5-67fe37549566"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "11429006",
+                  "display": "Consultation"
+                }
+              ]
+            },
+            "unitPrice": {
+              "value": 500,
+              "currency": "INR"
+            },
+            "net": {
+              "value": 500,
+              "currency": "INR"
+            }
+          }
+        ],
+        "total": {
+          "value": 500,
+          "currency": "INR"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "cfafdd4e-d492-483f-89f6-801b81330fd3",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+                  "code": "ABHA",
+                  "display": "Ayushman Bharat Health Account (ABHA) ID"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "value": "91-3457-6405-8102"
+          }
+        ],
+        "name": [
+          {
+            "text": "Gautam Rawat"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1999-01-20"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8f3d08a4-ac1f-4626-80f4-a787b15f841c",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "8f3d08a4-ac1f-4626-80f4-a787b15f841c",
+        "name": "vesak technologies",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+                  "code": "FI",
+                  "display": "Facility ID"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+            "value": "1000003503"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "9908760036",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "vedanthpadigelwar@gmail.com",
+            "use": "work"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b767edc9-c11c-4ece-824f-3dbdda1f05a4",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "b767edc9-c11c-4ece-824f-3dbdda1f05a4",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+                  "code": "HPID",
+                  "display": "Healthcare Professional ID (HPID)"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+            "value": "270988"
+          }
+        ],
+        "name": [
+          {
+            "text": "Dr. Onkar Bhave",
+            "prefix": [
+              "Dr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:afeee36e-fea2-4275-9750-9dfbbeb23292",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "afeee36e-fea2-4275-9750-9dfbbeb23292",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "TAB. DEMO MEDICINE 1"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3"
+        },
+        "authoredOn": "2022-12-02T00:00:00.000Z",
+        "requester": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:dd9dd618-8b44-4998-a929-2d752508fe84"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "Before Food | 10 days",
+            "additionalInstruction": [
+              {
+                "text": "Morning,Night"
+              }
+            ],
+            "route": {
+              "text": "not available"
+            },
+            "method": {
+              "text": "not available"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "b2e998bc-f001-4923-8479-baedebd3f488",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+                  "code": "HPID",
+                  "display": "Healthcare Professional ID (HPID)"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+            "value": "270988"
+          }
+        ],
+        "name": [
+          {
+            "text": "Dr. Onkar Bhave",
+            "prefix": [
+              "Dr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dd9dd618-8b44-4998-a929-2d752508fe84",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dd9dd618-8b44-4998-a929-2d752508fe84",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "active"
+            }
+          ],
+          "text": "active"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "code": {
+          "text": "undefined"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3}"
+        },
+        "recordedDate": "2022-12-02T00:00:00.000Z",
+        "recorder": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6a14a989-5a47-419c-8984-6d0ad1aad749",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "6a14a989-5a47-419c-8984-6d0ad1aad749",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "CAP. DEMO MEDICINE 2"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3"
+        },
+        "authoredOn": "2022-12-02T00:00:00.000Z",
+        "requester": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:0f04da40-aaa2-40cb-a97e-8d76e56563b2"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "Before Food | 10 days",
+            "additionalInstruction": [
+              {
+                "text": "Morning,Night"
+              }
+            ],
+            "route": {
+              "text": "not available"
+            },
+            "method": {
+              "text": "not available"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0f04da40-aaa2-40cb-a97e-8d76e56563b2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "0f04da40-aaa2-40cb-a97e-8d76e56563b2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "active"
+            }
+          ],
+          "text": "active"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "code": {
+          "text": "undefined"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3}"
+        },
+        "recordedDate": "2022-12-02T00:00:00.000Z",
+        "recorder": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:61560a12-5c55-4562-873a-8e3e10b27f53",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "61560a12-5c55-4562-873a-8e3e10b27f53",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "TAB. DEMO MEDICINE 3"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3"
+        },
+        "authoredOn": "2022-12-02T00:00:00.000Z",
+        "requester": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:7e07e476-bdbe-40b5-afb1-5e52b789663e"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "After Food | 10 days",
+            "additionalInstruction": [
+              {
+                "text": "Morning,Afternoon,Evening,Night"
+              }
+            ],
+            "route": {
+              "text": "not available"
+            },
+            "method": {
+              "text": "not available"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7e07e476-bdbe-40b5-afb1-5e52b789663e",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "7e07e476-bdbe-40b5-afb1-5e52b789663e",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "active"
+            }
+          ],
+          "text": "active"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "code": {
+          "text": "undefined"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3}"
+        },
+        "recordedDate": "2022-12-02T00:00:00.000Z",
+        "recorder": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b2cc1602-7ad5-4a00-ad2f-a8b4f05ad7b9",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "b2cc1602-7ad5-4a00-ad2f-a8b4f05ad7b9",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "TAB. DEMO MEDICINE 4"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3"
+        },
+        "authoredOn": "2022-12-02T00:00:00.000Z",
+        "requester": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:f639707c-5a91-4f88-a769-f2c22d97c047"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "After Food | 10 days",
+            "additionalInstruction": [
+              {
+                "text": "Morning,Night"
+              }
+            ],
+            "route": {
+              "text": "not available"
+            },
+            "method": {
+              "text": "not available"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f639707c-5a91-4f88-a769-f2c22d97c047",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "f639707c-5a91-4f88-a769-f2c22d97c047",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "active"
+            }
+          ],
+          "text": "active"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "code": {
+          "text": "undefined"
+        },
+        "subject": {
+          "reference": "urn:uuid:cfafdd4e-d492-483f-89f6-801b81330fd3}"
+        },
+        "recordedDate": "2022-12-02T00:00:00.000Z",
+        "recorder": {
+          "reference": "urn:uuid:b2e998bc-f001-4923-8479-baedebd3f488"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7b4e4b74-6934-4006-b1f2-08e71588d9c4",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "7b4e4b74-6934-4006-b1f2-08e71588d9c4",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+                  "code": "HPID",
+                  "display": "Healthcare Professional ID (HPID)"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+            "value": "270988"
+          }
+        ],
+        "name": [
+          {
+            "text": "Dr. Onkar Bhave",
+            "prefix": [
+              "Dr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4f363e3f-7a83-45b2-94a5-67fe37549566",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "4f363e3f-7a83-45b2-94a5-67fe37549566",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://xyzinsurance.in/policynumber/",
+            "value": "productIDtest"
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/coverage-selfpay",
+              "code": "pay",
+              "display": "PAY"
+            }
+          ]
+        },
+        "subscriber": {
+          "reference": "urn:uuid:00fcd6fc-f4b8-4ff6-8206-e2ae0d4a936e"
+        },
+        "subscriberId": "testcust07",
+        "beneficiary": {
+          "reference": "urn:uuid:c8b0c931-a9b4-408b-a9f3-fb0427f11c2b"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "https://terminology.hl7.org/6.1.0/CodeSystem-subscriber-relationship.html",
+              "code": "Self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2022-12-02",
+          "end": "2022-12-02"
+        },
+        "payor": [
+          {
+            "reference": "urn:uuid:1cbc302c-88aa-4be3-99f4-97056ac84087"
+          }
+        ],
+        "policyHolder": {
+          "reference": "urn:uuid:f645bd21-009b-40d7-8aa5-e2fe12daa4d1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00fcd6fc-f4b8-4ff6-8206-e2ae0d4a936e",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "00fcd6fc-f4b8-4ff6-8206-e2ae0d4a936e",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+                  "code": "ABHA",
+                  "display": "Ayushman Bharat Health Account (ABHA) ID"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "value": "91-3457-6405-8102"
+          }
+        ],
+        "name": [
+          {
+            "text": "Gautam Rawat"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1999-01-20"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c8b0c931-a9b4-408b-a9f3-fb0427f11c2b",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "c8b0c931-a9b4-408b-a9f3-fb0427f11c2b",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+                  "code": "ABHA",
+                  "display": "Ayushman Bharat Health Account (ABHA) ID"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "value": "91-3457-6405-8102"
+          }
+        ],
+        "name": [
+          {
+            "text": "Gautam Rawat"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1999-01-20"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1cbc302c-88aa-4be3-99f4-97056ac84087",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "1cbc302c-88aa-4be3-99f4-97056ac84087",
+        "name": "vesak technologies",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+                  "code": "FI",
+                  "display": "Facility ID"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/ValueSet/ndhm-identifier-type-code",
+            "value": "1000003503"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "9908760036",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "vedanthpadigelwar@gmail.com",
+            "use": "work"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f645bd21-009b-40d7-8aa5-e2fe12daa4d1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "f645bd21-009b-40d7-8aa5-e2fe12daa4d1",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+                  "code": "ABHA",
+                  "display": "Ayushman Bharat Health Account (ABHA) ID"
+                }
+              ]
+            },
+            "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "value": "91-3457-6405-8102"
+          }
+        ],
+        "name": [
+          {
+            "text": "Gautam Rawat"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1999-01-20"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3d29e7c8-e30a-4da7-b449-3e72fe22786b",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "3d29e7c8-e30a-4da7-b449-3e72fe22786b",
+        "status": "current",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "image/png",
+              "language": "en-IN",
+              "url": "https://aarogyaid-media.s3.ap-south-1.amazonaws.com/5606a7ac19a1-443c-ba3a-5b83ab52f486.png",
+              "title": "pres_3.png"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
