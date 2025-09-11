@@ -37,7 +37,7 @@
           ]
         },
         "purpose":[
-          "benefits"
+          "auth-requirements"
         ],
         "patient":{
           "reference":"urn:uuid:92ade0cb-84e7-46a1-ad48-de306f18b493"
