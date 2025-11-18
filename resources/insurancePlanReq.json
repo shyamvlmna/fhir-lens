@@ -1,0 +1,72 @@
+{
+    "identifier": {
+        "system": "https:/dummypayer.com/",
+        "value": "75b1340f-bfe7-4856-ae4e-3d0f06e2a8cc"
+    },
+    "entry": [
+        {
+            "resource": {
+                "input": [
+                    {
+                        "valueString": "100217",
+                        "id": "PolicyNumber",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-task-input-type-code",
+                                    "code": "policyNumber",
+                                    "display": "PolicyNumber"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "valueString": "32722",
+                        "id": "ProviderId",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-task-input-type-code",
+                                    "code": "providerId",
+                                    "display": "ProviderId"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "meta": {
+                    "lastUpdated": "2024-08-09T16:48:54.340+05:30",
+                    "versionId": "1",
+                    "profile": [
+                        "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Task"
+                    ]
+                },
+                "id": "75b1340f-bfe7-4856-ae4e-3d0f06e2a8cc",
+                "text": {
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Insurance Plan.</div>",
+                    "status": "generated"
+                },
+                "intent": "plan",
+                "resourceType": "Task",
+                "status": "requested"
+            },
+            "fullUrl": "urn:uuid:75b1340f-bfe7-4856-ae4e-3d0f06e2a8cc"
+        }
+    ],
+    "meta": {
+        "versionId": "1",
+        "security": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                "code": "V",
+                "display": "very restricted"
+            }
+        ],
+        "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/TaskBundle"
+        ]
+    },
+    "id": "75b1340f-bfe7-4856-ae4e-3d0f06e2a8cc",
+    "type": "collection",
+    "resourceType": "Bundle"
+}
