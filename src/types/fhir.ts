@@ -141,6 +141,7 @@ export interface Coverage {
   beneficiary?: Reference;
   payor?: Reference[];
   period?: Period;
+  extension?: ABDMExtension[];
 }
 
 // Claim Resources
@@ -183,16 +184,22 @@ export interface Claim {
   type?: CodeableConcept;
   use?: string;
   patient?: Reference;
-  billablePeriod?: Period;
   created?: string;
+  insurer?: Reference;
   provider?: Reference;
   priority?: CodeableConcept;
-  supportingInfo?: ClaimSupportingInfo[];
+  fundsReserve?: CodeableConcept;
+  prescription?: Reference;
+  originalPrescription?: Reference;
+  payee?: Reference;
+  referral?: Reference;
+  facility?: Reference;
+  careTeam?: any[];
   diagnosis?: ClaimDiagnosis[];
-  procedure?: ClaimProcedure[];
   insurance?: any[];
-  item?: ClaimItem[];
+  item?: any[];
   total?: Money;
+  extension?: ABDMExtension[];
 }
 
 export interface ClaimResponse {
@@ -207,22 +214,14 @@ export interface ClaimResponse {
   created?: string;
   insurer?: Reference;
   requestor?: Reference;
-  request?: Reference;
   outcome?: string;
   disposition?: string;
   preAuthRef?: string;
-  preAuthPeriod?: Period;
   payeeType?: CodeableConcept;
   item?: any[];
-  total?: Money[];
-  payment?: any;
-  fundsReserve?: CodeableConcept;
-  formCode?: CodeableConcept;
-  form?: any;
-  processNote?: any[];
-  communicationRequest?: Reference[];
-  insurance?: any[];
-  error?: any[];
+  addItem?: any[];
+  total?: Money;
+  extension?: ABDMExtension[];
 }
 
 // Coverage Eligibility Resources
@@ -308,20 +307,97 @@ export interface InsurancePlanCoverage {
   benefit?: Benefit[];
 }
 
+// NRCES ABDM NHCX Extensions and Custom Fields
+export interface ABDMExtension {
+  url: string;
+  valueString?: string;
+  valueCodeableConcept?: CodeableConcept;
+  valueBoolean?: boolean;
+  valueInteger?: number;
+  valueDecimal?: number;
+  valueDateTime?: string;
+}
+
 export interface InsurancePlan {
   resourceType: "InsurancePlan";
   id?: string;
   meta?: Meta;
-  extension?: Extension[];
+  identifier?: Identifier[];
+  name?: string;
+  type?: CodeableConcept[];
+  status?: string;
+  extension?: ABDMExtension[];
+}
+
+// Additional NHCX resource types
+export interface Task {
+  resourceType: "Task";
+  id?: string;
+  meta?: Meta;
   identifier?: Identifier[];
   status?: string;
-  type?: CodeableConcept[];
-  name?: string;
+  intent?: string;
+  code?: CodeableConcept;
+  focus?: Reference;
+  for?: Reference;
+  authoredOn?: string;
+  lastModified?: string;
+  requester?: Reference;
+  owner?: Reference;
+}
+
+export interface Communication {
+  resourceType: "Communication";
+  id?: string;
+  meta?: Meta;
+  identifier?: Identifier[];
+  status?: string;
+  category?: CodeableConcept[];
+  subject?: Reference;
+  topic?: CodeableConcept;
+  about?: Reference[];
+  sent?: string;
+  received?: string;
+  sender?: Reference;
+  recipient?: Reference[];
+  payload?: any[];
+}
+
+export interface PaymentNotice {
+  resourceType: "PaymentNotice";
+  id?: string;
+  meta?: Meta;
+  identifier?: Identifier[];
+  status?: string;
+  request?: Reference;
+  response?: Reference;
+  created?: string;
+  provider?: Reference;
+  payment?: Reference;
+  paymentDate?: string;
+  payee?: Reference;
+  recipient?: Reference;
+  amount?: Money;
+  paymentStatus?: CodeableConcept;
+}
+
+export interface PaymentReconciliation {
+  resourceType: "PaymentReconciliation";
+  id?: string;
+  meta?: Meta;
+  identifier?: Identifier[];
+  status?: string;
   period?: Period;
-  ownedBy?: Reference;
-  administeredBy?: Reference;
-  coverageArea?: Reference[];
-  coverage?: InsurancePlanCoverage[];
+  created?: string;
+  paymentIssuer?: Reference;
+  request?: Reference;
+  requestor?: Reference;
+  outcome?: string;
+  disposition?: string;
+  paymentDate?: string;
+  paymentAmount?: Money;
+  paymentIdentifier?: Identifier;
+  detail?: any[];
 }
 
 // Union type for all possible resources
@@ -334,7 +410,11 @@ export type FHIRResource = Patient
   | ClaimResponse
   | CoverageEligibilityRequest 
   | CoverageEligibilityResponse 
-  | InsurancePlan;
+  | InsurancePlan
+  | Task
+  | Communication
+  | PaymentNotice
+  | PaymentReconciliation;
 
 export interface BundleEntry {
   id?: string;

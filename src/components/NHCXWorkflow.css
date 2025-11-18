@@ -1,0 +1,437 @@
+/* Workflow-aware action buttons component */
+.workflow-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 16px;
+  background: #F9FAFB;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+.workflow-action-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.workflow-action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workflow-action-btn.primary {
+  background: #2563EB;
+  color: white;
+}
+
+.workflow-action-btn.primary:hover {
+  background: #1D4ED8;
+}
+
+.workflow-action-btn.secondary {
+  background: white;
+  color: #374151;
+  border: 1px solid #D1D5DB;
+}
+
+.workflow-action-btn.secondary:hover {
+  background: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+/* Workflow timeline component */
+.workflow-timeline {
+  margin: 24px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+.workflow-timeline h4 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.timeline-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  position: relative;
+}
+
+.timeline-step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  z-index: 1;
+}
+
+.timeline-step-label {
+  font-size: 12px;
+  text-align: center;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.timeline-step-date {
+  font-size: 11px;
+  color: #9CA3AF;
+  margin-top: 4px;
+}
+
+.timeline-connector {
+  flex: 1;
+  height: 2px;
+  background: #E5E7EB;
+  min-width: 40px;
+  margin: 0 -4px;
+  margin-bottom: 32px;
+}
+
+.timeline-connector.completed {
+  background: #10B981;
+}
+
+.timeline-step.completed .timeline-step-icon {
+  background: #D1FAE5;
+  color: #065F46;
+  border: 2px solid #10B981;
+}
+
+.timeline-step.current .timeline-step-icon {
+  background: #DBEAFE;
+  color: #1E40AF;
+  border: 2px solid #3B82F6;
+  animation: pulse 2s infinite;
+}
+
+.timeline-step.pending .timeline-step-icon {
+  background: #F3F4F6;
+  color: #9CA3AF;
+  border: 2px solid #E5E7EB;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+}
+
+/* Key information cards */
+.key-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.key-info-card {
+  padding: 16px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+}
+
+.key-info-label {
+  font-size: 12px;
+  color: #6B7280;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.key-info-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.key-info-value.amount {
+  color: #059669;
+  font-size: 24px;
+}
+
+.key-info-value.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* Amount comparison for approvals */
+.amount-comparison {
+  margin: 16px 0;
+  padding: 16px;
+  background: #F9FAFB;
+  border-radius: 8px;
+}
+
+.amount-comparison-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.amount-comparison-row:last-child {
+  border-bottom: none;
+  font-weight: 600;
+  padding-top: 12px;
+}
+
+.amount-comparison-label {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.amount-comparison-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.amount-comparison-value.positive {
+  color: #059669;
+}
+
+.amount-comparison-value.negative {
+  color: #DC2626;
+}
+
+.amount-comparison-value.warning {
+  color: #D97706;
+}
+
+/* Clinical summary sections */
+.clinical-summary {
+  margin: 20px 0;
+  padding: 16px;
+  background: #FEF3C7;
+  border-left: 4px solid #F59E0B;
+  border-radius: 4px;
+}
+
+.clinical-summary h5 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #92400E;
+}
+
+.clinical-summary p {
+  margin: 0;
+  font-size: 14px;
+  color: #78350F;
+  line-height: 1.5;
+}
+
+/* Document attachments */
+.document-attachments {
+  margin: 20px 0;
+}
+
+.document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.document-item:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.document-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.document-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: #EFF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.document-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.document-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.document-meta {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.document-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.document-action-btn {
+  padding: 6px 12px;
+  background: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.document-action-btn:hover {
+  background: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+/* Service/Item breakdown tables */
+.service-breakdown {
+  margin: 20px 0;
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+}
+
+.service-table th {
+  background: #F9FAFB;
+  padding: 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.service-table td {
+  padding: 12px;
+  border-top: 1px solid #E5E7EB;
+  font-size: 14px;
+  color: #111827;
+}
+
+.service-table tr:hover {
+  background: #F9FAFB;
+}
+
+.service-status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.service-status-icon.approved {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.service-status-icon.reduced {
+  background: #FED7AA;
+  color: #9A3412;
+}
+
+.service-status-icon.rejected {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .workflow-actions {
+    flex-direction: column;
+  }
+
+  .workflow-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .timeline-steps {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-connector {
+    width: 2px;
+    height: 40px;
+    margin: -4px 0;
+    margin-left: 19px;
+  }
+
+  .key-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-table {
+    font-size: 12px;
+  }
+
+  .service-table th,
+  .service-table td {
+    padding: 8px;
+  }
+}

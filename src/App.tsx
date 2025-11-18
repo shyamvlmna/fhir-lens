@@ -1,8 +1,18 @@
 import React from 'react';
-import FHIRBundleViewer from './components/FHIRBundleViewer';
+import FHIRRenderer from './components/FHIRRenderer';
+import { initNHCXService } from './config/nhcxConfig';
 import './App.css';
 
 const App: React.FC = () => {
+  // Initialize NHCX API service on app startup
+  React.useEffect(() => {
+    try {
+      initNHCXService();
+    } catch (error) {
+      console.warn('NHCX API initialization skipped:', error);
+    }
+  }, []);
+
   return (
     <div className="app">
       <div className="app-nav">
@@ -13,7 +23,7 @@ const App: React.FC = () => {
       </div>
 
       <div className="app-content">
-        <FHIRBundleViewer />
+        <FHIRRenderer />
       </div>
     </div>
   );
